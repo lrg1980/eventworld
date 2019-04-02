@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Header from './componentes/Header';
 import Formulario from './componentes/Formulario';
+import Eventos from './componentes/Eventos';
 
 class App extends Component {
 
   token = '3OS7IYV3H7YNCTBU5GLJ'; // Cambiar el token en caso de expirar o tener problemas.
   ordenar = 'date'; // Parameter you want to sort by - options are "date", "distance" and "best". Prefix with a hyphen to reverse the order, e.g. "-date".
   ubicacion = 'es_ES';
+  
 
   state = {
     categorias: [],
@@ -55,8 +57,9 @@ class App extends Component {
             categorias={this.state.categorias}
             obtenerEventos={this.obtenerEventos}
           />
+          <Eventos
+            eventos={this.state.eventos}/>
         </div>
-
       </div>
     );
   }
